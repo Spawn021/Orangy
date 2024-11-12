@@ -269,6 +269,10 @@ const productsData = {
     },
   ],
 };
+document.querySelector(".banner__btn").addEventListener("click", () => {
+  const productSection = document.querySelector(".product");
+  productSection.scrollIntoView({ behavior: "smooth" });
+});
 const productGrid = document.getElementById("productGrid");
 function renderProducts(category) {
   const products = productsData[category];

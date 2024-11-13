@@ -269,10 +269,42 @@ const productsData = {
     },
   ],
 };
+
 document.querySelector(".banner__btn").addEventListener("click", () => {
   const productSection = document.querySelector(".product");
   productSection.scrollIntoView({ behavior: "smooth" });
 });
+
+const infoItems = document.querySelectorAll(".header__info-item");
+const backBtn = document.querySelector(".header__info-back");
+const nextBtn = document.querySelector(".header__info-next");
+
+let currentIndex = 0;
+
+function displayMobile() {
+  const isMobile = window.innerWidth < 479;
+
+  infoItems.forEach((item, index) => {
+    if (isMobile) {
+      item.style.display = index === currentIndex ? "block" : "none";
+    } else {
+      item.style.display = "block";
+    }
+  });
+}
+backBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + infoItems.length) % infoItems.length;
+  displayMobile();
+});
+
+nextBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % infoItems.length;
+  displayMobile();
+});
+window.addEventListener("resize", displayMobile);
+
+// displayMobile();
+
 const productGrid = document.getElementById("productGrid");
 function renderProducts(category) {
   const products = productsData[category];
@@ -348,4 +380,17 @@ document.addEventListener("DOMContentLoaded", function () {
     pagination: false,
     arrows: false,
   }).mount();
+  if (window.innerWidth < 479) {
+    new Splide(".splide", {
+      type: "loop",
+      perPage: 1,
+      autoplay: true,
+      interval: 3000,
+      pagination: false,
+      arrows: false,
+      padding: {
+        right: "30%",
+      },
+    }).mount();
+  }
 });

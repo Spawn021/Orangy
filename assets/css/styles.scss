@@ -692,11 +692,19 @@
   justify-content: space-around;
   align-items: center;
 
+  @include responsive.mobile {
+    flex-direction: column;
+    height: 700px;
+  }
+
   &__info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    @include responsive.mobile {
+      margin-top: 50px;
+    }
   }
   &__title {
     max-width: 120px;
@@ -706,6 +714,10 @@
     margin-bottom: 15px;
     text-align: center;
     text-transform: uppercase;
+    @include responsive.mobile {
+      font-size: 15px;
+      max-width: 200px;
+    }
   }
   &__address {
     padding: 5px;
@@ -716,6 +728,9 @@
     text-align: center;
     font-family: "Lora", serif;
     margin-bottom: 20px;
+    @include responsive.mobile {
+      max-width: 280px;
+    }
   }
   button {
     padding: 4px 30px;
@@ -725,35 +740,57 @@
     font-size: 15px;
     line-height: 30px;
     border: 1px solid #d1ceca;
+    text-transform: uppercase;
+
+    @include responsive.mobile {
+      line-height: 40px;
+      padding: 4px 40px;
+    }
   }
   &__image-left {
     height: 100%;
     width: 30%;
     position: relative;
+    @include responsive.mobile {
+      width: 100%;
+    }
 
     img:nth-child(1) {
       width: 250px;
       height: 250px;
       object-fit: cover;
       position: absolute;
-      top: 35px;
-      right: 23px;
+      top: 30px;
+      right: 40%;
+
+      @include responsive.mobile {
+        width: 110px;
+        height: 110px;
+      }
     }
     img:nth-child(2) {
       width: 140px;
       height: 140px;
       object-fit: cover;
       position: absolute;
-      top: calc(38% - 3px);
-      right: 39%;
+      top: 50%;
+      right: 62%;
+      @include responsive.mobile {
+        width: 110px;
+        height: 110px;
+      }
     }
     img:nth-child(3) {
       width: 170px;
       height: 170px;
       object-fit: cover;
       position: absolute;
-      top: calc(60%);
-      right: calc(0% - 20px);
+      top: 54%;
+      right: 6%;
+      @include responsive.mobile {
+        width: 110px;
+        height: 110px;
+      }
     }
   }
   &__image-right {
@@ -761,7 +798,7 @@
     width: 30%;
     position: relative;
     @include responsive.mobile {
-      display: none;
+      width: 100%;
     }
 
     img:nth-child(1) {
@@ -771,6 +808,11 @@
       position: absolute;
       top: 35px;
       left: 70px;
+      @include responsive.mobile {
+        width: 110px;
+        height: 110px;
+        left: 80px;
+      }
     }
     img:nth-child(2) {
       width: 200px;
@@ -779,6 +821,12 @@
       position: absolute;
       top: 52%;
       left: 0px;
+      @include responsive.mobile {
+        width: 110px;
+        height: 110px;
+        top: 15%;
+        left: 63%;
+      }
     }
   }
 }

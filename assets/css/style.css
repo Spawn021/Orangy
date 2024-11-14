@@ -512,10 +512,6 @@
 @media (max-width: 479px) {
   .inspiration {
     margin-top: 40px;
-  }
-}
-@media (max-width: 479px) {
-  .inspiration {
     width: 85%;
   }
 }
@@ -543,22 +539,42 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 60px;
   width: 100%;
   height: 100%;
 }
 @media (max-width: 479px) {
   .inspiration__box {
-    display: block;
+    gap: 20px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    justify-content: flex-start;
+    cursor: pointer;
   }
 }
 .inspiration__box-item {
+  width: 22%;
+  height: 100%;
+  user-select: none;
+}
+@media (max-width: 479px) {
+  .inspiration__box-item {
+    min-width: 65%;
+  }
+}
+.inspiration__box-item-info {
   width: 100%;
   height: 100%;
 }
-.inspiration__box-item img {
+.inspiration__box-item-info img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 479px) {
+  .inspiration__box-item-info img {
+    height: 80%;
+  }
 }
 .inspiration__box-item-title {
   font-family: "Lora", serif;
@@ -567,10 +583,22 @@
   line-height: 38px;
   padding: 10px 0;
 }
+@media (max-width: 479px) {
+  .inspiration__box-item-title {
+    font-size: 15px;
+    padding: 10px 0 0px;
+  }
+}
 .inspiration__box-item-description {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+}
+@media (max-width: 479px) {
+  .inspiration__box-item-description {
+    font-size: 12px;
+    line-height: 20px;
+  }
 }
 
 .sub-banner {

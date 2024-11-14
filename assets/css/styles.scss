@@ -71,7 +71,7 @@
     text-align: center;
 
     @include responsive.mobile {
-      left: 0;
+      left: 8%;
     }
   }
   &__title {
@@ -666,6 +666,7 @@
       flex-direction: row;
       width: 100%;
       gap: 20px;
+      justify-content: start;
     }
 
     &-title {

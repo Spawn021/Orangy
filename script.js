@@ -160,3 +160,13 @@ container.addEventListener("mousemove", (e) => {
   const walk = (x - startX) * 3; // the speed of the scroll
   container.scrollLeft = scrollLeft - walk;
 });
+
+// Handle form submission
+const form = document.querySelector(".footer__info-input");
+const formInput = form.querySelector("input");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const email = formInput.value;
+  console.log(email);
+});

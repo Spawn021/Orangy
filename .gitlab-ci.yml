@@ -1,13 +1,11 @@
-image: node:18
-
 pages:
+  stage: deploy
   script:
-    - mkdir public
-    - cp index.html public/
-    - cp script.js public/
-    - cp data.js public/
-    - cp assets/css/style.css public/
-    - cp assets/css/base.css public/
+    - mkdir .public
+    - cp -r * .public
+    - mv .public public
   artifacts:
     paths:
       - public
+  only:
+    - master

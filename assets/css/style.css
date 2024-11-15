@@ -46,28 +46,18 @@
 }
 
 .banner {
-  width: 100%;
+  background-image: url("../image/banner.png");
   height: 880px;
-  position: relative;
-}
-.banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .banner__content {
-  position: absolute;
   max-width: 352px;
   width: 352px;
   color: #fff;
-  top: 34%;
-  left: calc(39% - 9px);
+  margin: 0 auto;
   text-align: center;
-}
-@media (max-width: 479px) {
-  .banner__content {
-    left: 8%;
-  }
 }
 .banner__title {
   font-size: 72px;
@@ -394,8 +384,6 @@
   display: flex;
   overflow: hidden;
   white-space: nowrap;
-  --gap: 20px;
-  gap: var(--gap);
 }
 @media (max-width: 479px) {
   .scroll {
@@ -406,7 +394,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: var(--gap);
   animation: scroll 10s linear infinite;
 }
 .scroll:hover .scroll__group {
@@ -818,8 +805,8 @@
   height: 250px;
   object-fit: cover;
   position: absolute;
-  top: 30px;
-  right: 40%;
+  top: 7%;
+  right: 10%;
 }
 @media (max-width: 479px) {
   .contact__image-left img:nth-child(1) {
@@ -832,8 +819,8 @@
   height: 140px;
   object-fit: cover;
   position: absolute;
-  top: 50%;
-  right: 62%;
+  top: 38%;
+  right: 45%;
 }
 @media (max-width: 479px) {
   .contact__image-left img:nth-child(2) {
@@ -846,8 +833,8 @@
   height: 170px;
   object-fit: cover;
   position: absolute;
-  top: 54%;
-  right: 6%;
+  top: 58%;
+  right: 4%;
 }
 @media (max-width: 479px) {
   .contact__image-left img:nth-child(3) {
@@ -870,8 +857,8 @@
   height: 270px;
   object-fit: cover;
   position: absolute;
-  top: 35px;
-  left: 70px;
+  top: 10%;
+  left: 10%;
 }
 @media (max-width: 479px) {
   .contact__image-right img:nth-child(1) {
@@ -886,8 +873,8 @@
   height: 200px;
   object-fit: cover;
   position: absolute;
-  top: 52%;
-  left: 0px;
+  top: 56%;
+  left: -5%;
 }
 @media (max-width: 479px) {
   .contact__image-right img:nth-child(2) {
@@ -1003,7 +990,7 @@
 
 @keyframes scroll {
   to {
-    transform: translateX(calc(-100% - var(--gap)));
+    transform: translateX(-100%);
   }
 }
 

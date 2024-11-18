@@ -9,7 +9,7 @@ function renderProducts(category) {
         `<div class="product__grid-item product__grid-item--${index + 1}">
                 <div class="product__info">
                   <div class="product__image">
-                    <img src="${product.image}"alt="product"/>
+                    <img src="${product.image}"alt="product" loading="lazy"/>
                   </div>
                   ${
                     product.labels?.includes("Selling fast")
